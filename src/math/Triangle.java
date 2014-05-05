@@ -22,11 +22,21 @@ public class Triangle {
 		return Math.pow(Math.pow(a, 2) + Math.pow(b, 2), 0.5);
 	}
 	
+	private static void getInput(){
+		
+		String rawInput = userInput.next();
+		
+	}	
+	
 	public static void main(String[] args){
 		//test with pythagorean triple
 		//System.out.print(calculateHypotenuse(3,4));
 		System.out.println();
 		
+		
+		
 	}
+	
+	
 	
 }
