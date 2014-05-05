@@ -1,7 +1,10 @@
 package math;
 
-public class Triangle {
+import java.util.Scanner;
 
+public class Triangle {
+	
+	static Scanner userInput = new Scanner(System.in);
 	/*
 	 * Given a number N and then N lines of information in the form of two side lengths (eg a=3 b=4),
 	 * and an angle (right angle in degrees), calculate the third side (the hypotenuse) and the other two angles (in degrees).
@@ -22,7 +25,7 @@ public class Triangle {
 	public static void main(String[] args){
 		//test with pythagorean triple
 		//System.out.print(calculateHypotenuse(3,4));
-		
+		System.out.println();
 		
 	}
 	
