@@ -17,7 +17,7 @@ public class CaesarCipher {
 	
 	public static void main(String[] args){
 		
-		System.out.print(applyCipher(getInput()));
+		System.out.print(encrypt(getInput()));
 		
 	}
 	
@@ -42,7 +42,7 @@ public class CaesarCipher {
 		
 	}	
 	
-	private static ArrayList<Character> applyCipher(ArrayList<Character> parsedText){
+	private static ArrayList<Character> encrypt(ArrayList<Character> parsedText){
 
 		ArrayList<Character> cipher = new ArrayList<Character>();
 		
