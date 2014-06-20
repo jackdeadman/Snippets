@@ -1,58 +1,45 @@
 package security;
 
-import java.util.ArrayList;
 import java.util.Scanner;
 
-//take an input string, 
-//assign that to a variable, 
-//parse the text into individual characters
-//shift each character by a fixed shift amount specified by the user
-//return ciphertext
-
 public class CaesarCipher {
+
+	static Scanner keyboardInput = new Scanner(System.in);
 	
-	static Scanner userInput = new Scanner(System.in);
-	static int shift;
-	
-	
-	public static void main(String[] args){
+	private static char[] getPlainText(){
 		
-		System.out.print(encrypt(getInput()));
+		System.out.println("Enter your plaintext: ");
+		//takes keyboard input and strips it of whitespace
+		String tempPlainText = keyboardInput.nextLine().replaceAll("\\s+", "");
+		char[] parsedPlainText = tempPlainText.toUpperCase().toCharArray();
+		
+		return parsedPlainText;
 		
 	}
 	
-	private static ArrayList<Character> getInput(){
-
-		String plaintext = userInput.nextLine();
-		shift = userInput.nextInt();
-		ArrayList<Character> parsedText = new ArrayList<Character>();
+	private static int getShift(){
 		
-		for(int i=0; i< plaintext.length(); i++){
-			
-			if(plaintext.charAt(i) != ' '){
-				parsedText.add(plaintext.charAt(i));
-			}else{
-				continue;
-			}
-			
-			
-		}
+		System.out.println("Enter your shift: ");
+		int shift = keyboardInput.nextInt();
 		
-		return parsedText;
-		
-	}	
+		return shift;
+	}
 	
-	private static ArrayList<Character> encrypt(ArrayList<Character> parsedText){
-
-		ArrayList<Character> cipher = new ArrayList<Character>();
+	private static void encrypt(char[] parsedPlainText, int b){
+		//character limit of 500 is arbitrary workaround to avoid having to use an ArrayList
+		int[] shiftedArray = new int[500];
 		
-		for(int i=0; i<parsedText.size(); i++){
-			
-			cipher.add((char)((int)(parsedText.get(i))+shift));
-			
+		for(int i = 0; i < parsedPlainText.length; i++){
+			shiftedArray[i] = parsedPlainText[i] + b;
+			System.out.print((char)(shiftedArray[i]));
 		}
 		
-		return cipher;
-	}	
+	}
+	
+	public static void main(String[] args){
+		
+		encrypt(getPlainText(), getShift());
+		
+	}
 	
 }
