@@ -12,7 +12,7 @@ public class Collatz {
 		
 		long num = userInput.nextLong();
 		int numSteps = 0;
-		
+
 		while(num > 1){
 			
 			if(num % 2 == 0){
