@@ -19,7 +19,7 @@ public class FilePrinter{
 			}
 
 		}catch(FileNotFoundException e){
-
+				System.out.println("File doesn't exist!");
 		}
 
 	}
